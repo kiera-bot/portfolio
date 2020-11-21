@@ -1,21 +1,119 @@
 <!DOCTYPE html> 
-
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <title>Baked Beans</title>
   <meta name="description" content="portfolio">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Inline+Display:wght@400;900&family=Text+Me+One&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"/>
 </head>
 <body>
   <div id="sidenav">
+    <div></div>
+    <div id="side-nav-content">
     <a href="#">About</a>
     <a href="#">Services</a>
     <a href="#">Clients</a>
     <a href="#">Contact</a>
+    </div>
+    <div class="tk-blob" style="--fill: #009688;">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 317.5 353.7">
+        <path d="M291.8 55.3c30.4 39.9 30.7 102 17 160.4-13.8 58.3-41.6 112.9-84 130.9s-99.3-.6-137-30C50.2 287.1 32 246.9 17 200.5 2.1 154.1-9.6 101.4 11.5 63.6 32.6 25.8 86.6 2.8 143.8.2c57.2-2.6 117.6 15.2 148 55.1z"></path>
+      </svg>
+    </div>
   </div>
   <div id="main-container">
-    <p>test</p>
+    <div id="about"></div>
+    <div id="portfolio-container">
+      <div class="portfolio-column">
+        <h4>Projects</h4>
+
+      </div>
+      <div class="portfolio-column">
+        <h4>Games</h4>
+        <div class="info-block">
+          <img src="../static/images/champs.png" />
+          <div class="info-text">
+            <p class="bold">Champions Online</p>
+            <p>test test test test test test test.</p>
+          </div>
+        </div>
+        <div class="info-block">
+          <img src="../static/images/game-of-thrones.jpg" />
+          <div class="info-text">
+            <p class="bold">Game of Thrones: A Telltale Series</p>
+            <p>test test test test test test test.</p>
+          </div>
+        </div>
+        <div class="info-block">
+          <img src="../static/images/magic.png" />
+          <div class="info-text">
+            <p class="bold">Magic: Legends</p>
+            <p>test test test test test test test.</p>
+          </div>
+        </div>
+        <div class="info-block">
+          <img src="../static/images/neverwinter.jpg" />
+          <div class="info-text">
+            <p class="bold">Neverwinter</p>
+            <p>test test test test test test test.</p>
+          </div>
+        </div>
+        <div class="info-block">
+          <img src="../static/images/sto.jpg" />
+          <div class="info-text">
+            <p class="bold">Star Trek Online</p>
+            <p>test test test test test test test.</p>
+          </div>
+        </div>
+        <div class="info-block">
+          <img src="../static/images/tftb.png" />
+          <div class="info-text">
+            <p class="bold">Tales From The Borderlands</p>
+            <p>test test test test test test test.</p>
+          </div>
+        </div>
+        <div class="info-block">
+          <img src="../static/images/twd-telltale-UK-release.jpg" />
+          <div class="info-text">
+            <p class="bold">The Walking Dead: Season 1</p>
+            <p>test test test test test test test.</p>
+          </div>
+        </div>
+        <div class="info-block">
+          <img src="../static/images/WalkingDeadSeason2Title.jpg" />
+          <div class="info-text">
+            <p class="bold">The Walking Dead: Season 2</p>
+            <p>test test test test test test test.</p>
+          </div>
+        </div>
+        <div class="info-block">
+          <img src="../static/images/warcommander.png" />
+          <div class="info-text">
+            <p class="bold">War Commander</p>
+            <p>test test test test test test test.</p>
+          </div>
+        </div>
+        <div class="info-block">
+          <img src="../static/images/wcra-logo.png" />
+          <div class="info-text">
+            <p class="bold">War Commader: Rogue Assault</p>
+            <p>test test test test test test test.</p>
+          </div>
+        </div>
+        <div class="info-block">
+          <img src="../static/images/wolf.svg" />
+          <div class="info-text">
+            <p class="bold">The Wolf Among Us</p>
+            <p>test test test test test test test.</p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </body>
 </html>
