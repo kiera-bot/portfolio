@@ -94,8 +94,7 @@
   width: 100%;
   height: 100vh;
   justify-content: center;
-  overflow-y: visible;
-  /* overflow:hidden; */
+  overflow:hidden;
   /* margin-left: 11vw; */
 
  
@@ -103,16 +102,17 @@
 
 #splash img{
   width: 100%;
-  margin-top: 98.5vh;
-  padding-top: 3vh;
-  /* margin-left: 30vw; */
-  position:absolute;
+  z-index: 2;
+  position: absolute;
+  bottom:0;
 }
 
 canvas{
   z-index: 1;
   position: absolute;
   top: 0;
+  width: 100%;
+  height: 100%;
 }
 
 #splash-content{
