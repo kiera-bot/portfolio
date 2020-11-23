@@ -11,6 +11,11 @@
   --funky-teal:#00a0a0;
   --awesome-green:#007f4f;
   --weird-beige:#FDF8F5;
+  --kinda-black:#1E1E1E;
+  --weird-red: #F64E4D;
+  --really-dark-grey: #323234;
+  --halloween-orange: #DE593C;
+  --banana: #F6C353;
 }
 
 @media screen and (max-width: 700px) {
@@ -38,6 +43,7 @@
     }
     
   }
+  
 
 #nav{
   height: 100vh;
@@ -50,6 +56,7 @@
   overflow-x: hidden;
   top:0;
   left:0;
+  z-index: 3;
   /* min-width: 100px; */
 }
 
@@ -67,53 +74,67 @@
   text-decoration: none;
   font-size: 2vw;
   color: whitesmoke;
+
 }
 
 
 #main-container{
   display: flex;
   flex-direction: column;
-  color: var(--kabluey);
+  color: var(--really-dark-grey);
   max-width: 5118px;
   background-color: var(--weird-beige);
-  background-image: url("../images/noisy-texture-100x100-o4-d10-c-FDF8F5-t0.png")
+  background-image: url("../images/noisy-texture-100x100-o4-d10-c-FDF8F5-t0.png");
+
 }
 
 #splash{
   display: flex;
   flex-direction: column;
   width: 100%;
-  background-color: var(--retro-pink);
   height: 100vh;
   justify-content: center;
+  overflow-y: visible;
+  /* overflow:hidden; */
+  /* margin-left: 11vw; */
+
+ 
 }
 
 #splash img{
-  width: 60%;
-  height: auto;
-  margin-left: 30vw;
+  width: 100%;
+  margin-top: 98.5vh;
+  padding-top: 3vh;
+  /* margin-left: 30vw; */
   position:absolute;
+}
+
+canvas{
+  z-index: 1;
+  position: absolute;
+  top: 0;
 }
 
 #splash-content{
   text-shadow:
-  5px 5px 0 var(--awesome-green),
-  10px 10px 0 var(--funky-teal);
- 
-  width: 60%;
-  z-index: 1;
-  margin-left: 46vw;
-  margin-bottom: 13vh;
+  5px 5px 0 var(--halloween-orange),
+  10px 10px 0 var(--banana);
+  margin-left: 37vw;
+  height:70%;
+  width:40%;
+  z-index: 2;
 }
 
 #splash-content p{
-  font-family: 'Modak', cursive;
+
   font-size: 8vw;
 }
 
 #splash-bottom-border{
   width: 100%;
   min-height: 50px;
+  z-index: 2;
+  position: relative;
 }
 
 #about{
@@ -173,4 +194,46 @@
 .info-text p{
   margin-top: .5em;
   font-size: .5em;
+}
+
+
+
+
+
+.wrapper{
+	background: #50a3a2;
+background: -webkit-linear-gradient(top left, --retro-pink 0%, #53e3a6 100%);
+background: -moz-linear-gradient(top left, #50a3a2 0%, #53e3a6 100%);
+background: -o-linear-gradient(top left, #50a3a2 0%, #53e3a6 100%);
+background: linear-gradient(to bottom right, #50a3a2 0%, #53e3a6 100%);
+	
+	position: absolute;
+	top: 50%;
+	left: 0;
+	width: 100%;
+	height: 400px;
+	margin-top: -200px;
+	overflow: hidden;
+}
+	
+.container{
+	max-width: 600px;
+	margin: 0 auto;
+	padding: 80px 0;
+	height: 400px;
+	text-align: center;
+}
+
+@keyframes ripple{
+  0%{
+    transform: scale(1);
+  }
+  
+  50%{
+    transform: scale(1.1);
+  }
+  
+  100%{
+    transform: scale(1);
+  }
 }
