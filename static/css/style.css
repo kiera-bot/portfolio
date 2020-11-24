@@ -119,9 +119,12 @@ canvas{
   text-shadow:
   5px 5px 0 var(--halloween-orange),
   10px 10px 0 var(--banana);
-  margin-left: 37vw;
+  margin-left: 25vw;
   height:70%;
-  width:40%;
+  width:55%;
+  background-image: url("../images/Untitled-2.png");
+  background-size: contain;
+  background-repeat: no-repeat;
   z-index: 2;
 }
 
