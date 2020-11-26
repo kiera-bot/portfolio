@@ -103,12 +103,12 @@
     }
   
     void main() {
-      vec3 color1 = vec3(34.0/255.0,33.0/255.0,33.0/255.0);
-      vec3 color2 = vec3(48.0/255.0,48.0/255.0,48.0/255.0);
-      vec3 color3 = vec3(50.0/255.0,50.0/255.0,52.0/255.0);;
-      vec3 color4 = vec3(56.0/255.0,56.0/255.0,56.0/255.0);
-      vec3 color5 = vec3(64.0/255.0,64.0/255.0,64.0/255.0);
-      vec3 color6 = vec3(88.0/255.0,88.0/255.0,88.0/255.0);
+      vec3 color1 = vec3(0.0/255.0,62.0/255.0,42.0/255.0);
+      vec3 color2 = vec3(0.0/255.0,82.0/255.0,56.0/255.0);
+      vec3 color3 = vec3(0.0/255.0,72.0/255.0,49.0/255.0);
+      vec3 color4 = vec3(0.0/255.0,93.0/255.0,63.0/255.0);
+      vec3 color5 = vec3(0.0/255.0,103.0/255.0,70.0/255.0);
+      vec3 color6 = vec3(0.0/255.0,72.0/255.0,49.0/255.0);
       vec2 lt = vec2(gl_FragCoord.x + u_xpos, gl_FragCoord.y + u_ypos);
       vec2 st = lt.xy/u_resolution.xy;
       st.x *= u_resolution.x/u_resolution.y;
@@ -162,99 +162,101 @@
     <div id="splash">
       <canvas id="glscreen"></canvas>
       <!-- <img src ="../static/images/splash2.png" class="ripple"/> -->
-    <div id="splash-content">
+      <div id="splash-content">
 
-      <!-- <p>Kiera</p>
-      <p id="castner">Castner</p> -->
+        <p>Kiera</p>
+        <p id="castner">Castner</p>
+      </div>
+      <!-- <img src="../static/images/splash-border-top.png"/> -->
     </div>
-    <img src="../static/images/splash-border-top.png"/>
-    </div>
-    <img id="splash-bottom-border" src="../static/images/splash-border-bottom.png"/>
-    <div id="about">
-
-    </div>
-    <div id="portfolio-container">
-      <div class="portfolio-column">
-        <h4>Projects</h4>
+    <!-- <img id="splash-bottom-border" src="../static/images/splash-border-bottom.png"/> -->
+    <div id="content">
+      <div id="about">
 
       </div>
-      <div class="portfolio-column">
-        <h4>Games</h4>
-        <div class="info-block">
-          <img src="../static/images/champs.png" />
-          <div class="info-text">
-            <p class="bold">Champions Online</p>
-            <p>test test test test test test test.</p>
-          </div>
+      <div id="portfolio-container">
+        <div class="portfolio-column">
+          <h4>Projects</h4>
+
         </div>
-        <div class="info-block">
-          <img src="../static/images/game-of-thrones.jpg" />
-          <div class="info-text">
-            <p class="bold">Game of Thrones: A Telltale Series</p>
-            <p>test test test test test test test.</p>
+        <div class="portfolio-column">
+          <h4>Games</h4>
+          <div class="info-block">
+            <img src="../static/images/champs.png" />
+            <div class="info-text">
+              <p class="bold">Champions Online</p>
+              <p>test test test test test test test.</p>
+            </div>
           </div>
-        </div>
-        <div class="info-block">
-          <img src="../static/images/magic.png" />
-          <div class="info-text">
-            <p class="bold">Magic: Legends</p>
-            <p>test test test test test test test.</p>
+          <div class="info-block">
+            <img src="../static/images/game-of-thrones.jpg" />
+            <div class="info-text">
+              <p class="bold">Game of Thrones: A Telltale Series</p>
+              <p>test test test test test test test.</p>
+            </div>
           </div>
-        </div>
-        <div class="info-block">
-          <img src="../static/images/neverwinter.jpg" />
-          <div class="info-text">
-            <p class="bold">Neverwinter</p>
-            <p>test test test test test test test.</p>
+          <div class="info-block">
+            <img src="../static/images/magic.png" />
+            <div class="info-text">
+              <p class="bold">Magic: Legends</p>
+              <p>test test test test test test test.</p>
+            </div>
           </div>
-        </div>
-        <div class="info-block">
-          <img src="../static/images/sto.jpg" />
-          <div class="info-text">
-            <p class="bold">Star Trek Online</p>
-            <p>test test test test test test test.</p>
+          <div class="info-block">
+            <img src="../static/images/neverwinter.jpg" />
+            <div class="info-text">
+              <p class="bold">Neverwinter</p>
+              <p>test test test test test test test.</p>
+            </div>
           </div>
-        </div>
-        <div class="info-block">
-          <img src="../static/images/tftb.png" />
-          <div class="info-text">
-            <p class="bold">Tales From The Borderlands</p>
-            <p>test test test test test test test.</p>
+          <div class="info-block">
+            <img src="../static/images/sto.jpg" />
+            <div class="info-text">
+              <p class="bold">Star Trek Online</p>
+              <p>test test test test test test test.</p>
+            </div>
           </div>
-        </div>
-        <div class="info-block">
-          <img src="../static/images/twd-telltale-UK-release.jpg" />
-          <div class="info-text">
-            <p class="bold">The Walking Dead: Season 1</p>
-            <p>test test test test test test test.</p>
+          <div class="info-block">
+            <img src="../static/images/tftb.png" />
+            <div class="info-text">
+              <p class="bold">Tales From The Borderlands</p>
+              <p>test test test test test test test.</p>
+            </div>
           </div>
-        </div>
-        <div class="info-block">
-          <img src="../static/images/WalkingDeadSeason2Title.jpg" />
-          <div class="info-text">
-            <p class="bold">The Walking Dead: Season 2</p>
-            <p>test test test test test test test.</p>
+          <div class="info-block">
+            <img src="../static/images/twd-telltale-UK-release.jpg" />
+            <div class="info-text">
+              <p class="bold">The Walking Dead: Season 1</p>
+              <p>test test test test test test test.</p>
+            </div>
           </div>
-        </div>
-        <div class="info-block">
-          <img src="../static/images/warcommander.png" />
-          <div class="info-text">
-            <p class="bold">War Commander</p>
-            <p>test test test test test test test.</p>
+          <div class="info-block">
+            <img src="../static/images/WalkingDeadSeason2Title.jpg" />
+            <div class="info-text">
+              <p class="bold">The Walking Dead: Season 2</p>
+              <p>test test test test test test test.</p>
+            </div>
           </div>
-        </div>
-        <div class="info-block">
-          <img src="../static/images/wcra-logo.png" />
-          <div class="info-text">
-            <p class="bold">War Commader: Rogue Assault</p>
-            <p>test test test test test test test.</p>
+          <div class="info-block">
+            <img src="../static/images/warcommander.png" />
+            <div class="info-text">
+              <p class="bold">War Commander</p>
+              <p>test test test test test test test.</p>
+            </div>
           </div>
-        </div>
-        <div class="info-block">
-          <img src="../static/images/wolf.svg"/>
-          <div class="info-text">
-            <p class="bold">The Wolf Among Us</p>
-            <p>test test test test test test test.</p>
+          <div class="info-block">
+            <img src="../static/images/wcra-logo.png" />
+            <div class="info-text">
+              <p class="bold">War Commader: Rogue Assault</p>
+              <p>test test test test test test test.</p>
+            </div>
+          </div>
+          <div class="info-block">
+            <img src="../static/images/wolf.svg" />
+            <div class="info-text">
+              <p class="bold">The Wolf Among Us</p>
+              <p>test test test test test test test.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -268,7 +270,7 @@
   <script src="https://cdn.jsdelivr.net/npm/vanta@0.5.21/dist/vanta.birds.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vanta@0.5.21/dist/vanta.trunk.min.js"></script> -->
 
-  
+
   <!-- <script>
     VANTA.TRUNK({
       el: "#splash",
