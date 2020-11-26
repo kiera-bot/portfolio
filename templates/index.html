@@ -7,8 +7,9 @@
   <meta name="description" content="portfolio">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Modak&family=Text+Me+One&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/blobz.css') }}" />
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fascinate&family=Fascinate+Inline&family=Limelight&family=Notable&family=Text+Me+One&display=swap" rel="stylesheet">  <link rel="stylesheet" href="{{ url_for('static', filename='css/blobz.css') }}" />
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
   <script id="2d-fragment-shader" type="x-shader/x-fragment">// <![CDATA[
     #ifdef GL_ES
@@ -142,150 +143,142 @@
     }
     // ]]></script>
 </head>
-
-<body>
-  <div id="nav">
-    <div></div>
-    <div id="nav-content">
-      <a href="#">About</a>
-      <a href="#">Services</a>
-      <a href="#">Clients</a>
-      <a href="#">Contact</a>
+  <body>
+    <div id="nav">
+     
+      <div id="nav-content">
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Clients</a>
+        <a href="#">Contact</a>
+      </div>
     </div>
-    <!-- <div class="tk-blob" style="--fill: #009688;">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 317.5 353.7">
-        <path d="M291.8 55.3c30.4 39.9 30.7 102 17 160.4-13.8 58.3-41.6 112.9-84 130.9s-99.3-.6-137-30C50.2 287.1 32 246.9 17 200.5 2.1 154.1-9.6 101.4 11.5 63.6 32.6 25.8 86.6 2.8 143.8.2c57.2-2.6 117.6 15.2 148 55.1z"></path>
-      </svg>
-    </div> -->
-  </div>
-  <div id="main-container">
     <div id="splash">
       <canvas id="glscreen"></canvas>
-      <!-- <img src ="../static/images/splash2.png" class="ripple"/> -->
-      <div id="splash-content">
 
-        <p>Kiera</p>
-        <p id="castner">Castner</p>
-      </div>
-      <!-- <img src="../static/images/splash-border-top.png"/> -->
+      <div id="splash-content"></div>
     </div>
-    <!-- <img id="splash-bottom-border" src="../static/images/splash-border-bottom.png"/> -->
-    <div id="content">
+    <div id="main-content">
+      <div id="title"><h1>Kiera Castner</h1></div>
+      <div id="overlay">
+      <div id="content-wrapper">
       <div id="about">
-
+        <h3>Hi there! :)</h3>
+        <img id ="me" src="../static/images/ocean_me.png"/>
+        <p>I'm a full stack developer located in Seattle, WA. I recently graduated a coding bootcamp! I've previously worked in the game industry at Cryptic Studios and Telltale Games.</p>
+        </br>
       </div>
+      <!-- <h3>Random Facts:</h3>
+        <div id="about-facts">
+          <div class="about-column">
+            <img src ="../static/images/giphy.gif"/>
+            <p>I <i class="material-icons">favorite</i> seals!</p>
+          </div>
+          <div class="about-column"></div>
+          <div class="about-column">
+            <h3>I like to bike!</h3>
+          </div>
+          <div class="about-column"><img src="https://raw.githubusercontent.com/kiera-bot/catfacts/main/images/jack.png"/><p>This is my cat Jack!</p></div>
+          <div class="about-column"><img src="../static/images/viking.png"/><p>I collect these weird little viking dudes from the 60s.</p></div>
+          <div class="about-column"><img src="https://raw.githubusercontent.com/kiera-bot/catfacts/main/images/pumpkin.png"/><p>And this is my other cat, Pumpkin!</p></div>
+        </div> -->
+        <h3>Portfolio!</h3>
       <div id="portfolio-container">
+        
         <div class="portfolio-column">
-          <h4>Projects</h4>
+          <h3>Projects</h3>
 
         </div>
         <div class="portfolio-column">
-          <h4>Games</h4>
+          <h3>Games</h3>
           <div class="info-block">
             <img src="../static/images/champs.png" />
             <div class="info-text">
-              <p class="bold">Champions Online</p>
+              <h4>Champions Online</h4>
               <p>test test test test test test test.</p>
             </div>
           </div>
           <div class="info-block">
             <img src="../static/images/game-of-thrones.jpg" />
             <div class="info-text">
-              <p class="bold">Game of Thrones: A Telltale Series</p>
+              <h4>Game of Thrones: A Telltale Series</h4>
               <p>test test test test test test test.</p>
             </div>
           </div>
           <div class="info-block">
             <img src="../static/images/magic.png" />
             <div class="info-text">
-              <p class="bold">Magic: Legends</p>
+              <h4>Magic: Legends</h4>
               <p>test test test test test test test.</p>
             </div>
           </div>
           <div class="info-block">
             <img src="../static/images/neverwinter.jpg" />
             <div class="info-text">
-              <p class="bold">Neverwinter</p>
+              <h4>Neverwinter</h4>
               <p>test test test test test test test.</p>
             </div>
           </div>
           <div class="info-block">
             <img src="../static/images/sto.jpg" />
             <div class="info-text">
-              <p class="bold">Star Trek Online</p>
+              <h4>Star Trek Online</h4>
               <p>test test test test test test test.</p>
             </div>
           </div>
           <div class="info-block">
             <img src="../static/images/tftb.png" />
             <div class="info-text">
-              <p class="bold">Tales From The Borderlands</p>
-              <p>test test test test test test test.</p>
+              <h4>Tales From The Borderlands</h4>
+              <p>test test test test test test test. </p>
             </div>
           </div>
           <div class="info-block">
             <img src="../static/images/twd-telltale-UK-release.jpg" />
             <div class="info-text">
-              <p class="bold">The Walking Dead: Season 1</p>
+              <h4>The Walking Dead: Season 1</h4>
               <p>test test test test test test test.</p>
             </div>
           </div>
           <div class="info-block">
             <img src="../static/images/WalkingDeadSeason2Title.jpg" />
             <div class="info-text">
-              <p class="bold">The Walking Dead: Season 2</p>
-              <p>test test test test test test test.</p>
+              <h4>The Walking Dead: Season 2</h4>
+              <p>test test test test test test test. </p>
             </div>
           </div>
           <div class="info-block">
             <img src="../static/images/warcommander.png" />
             <div class="info-text">
-              <p class="bold">War Commander</p>
-              <p>test test test test test test test.</p>
+              <h4>War Commander</h4>
+              <p>test test test test test test test. </p>
             </div>
           </div>
           <div class="info-block">
             <img src="../static/images/wcra-logo.png" />
             <div class="info-text">
-              <p class="bold">War Commader: Rogue Assault</p>
+              <h4>War Commader: Rogue Assault</h4>
               <p>test test test test test test test.</p>
             </div>
           </div>
           <div class="info-block">
-            <img src="../static/images/wolf.svg" />
+            <img src="../static/images/wolf.png" />
             <div class="info-text">
-              <p class="bold">The Wolf Among Us</p>
+              <h4>The Wolf Among Us</h4>
               <p>test test test test test test test.</p>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.12.0/matter.js"></script> -->
-  <script src="../static/js/scripts.js"></script>
-  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r119/three.min.js" integrity="sha512-E1+SnTWyHYoY5MN8wpL0SI4TYbpWN12sHXyEViwbzzEyq6GHxQrPFDzEeUDab4emXcf3Yj41Tht2JZnpo3kjwA==" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vanta@0.5.21/dist/vanta.birds.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vanta@0.5.21/dist/vanta.trunk.min.js"></script> -->
-
-
-  <!-- <script>
-    VANTA.TRUNK({
-      el: "#splash",
-      mouseControls: true,
-      touchControls: true,
-      gyroControls: false,
-      // minHeight: 200.00,
-      // minWidth: 200.00,
-      scale: .2,
-      scaleMobile: .2,
-      color: 0x9d6174,
-      // backgroundColor: 0x638cb6,
-      chaos: 4.50
-    })
-    </script> -->
-</body>
-
+    </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/animate.css">
+    <script src="../static/js/scripts.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script>
+    new WOW().init();
+    </script>
+  </body>
 </html>
