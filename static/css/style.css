@@ -222,7 +222,7 @@ canvas{
 
 
 
-#portfolio-container{
+.portfolio-container{
   width:100%;
   display:flex;
   flex-direction:row;
