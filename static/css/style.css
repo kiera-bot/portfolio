@@ -197,41 +197,28 @@ canvas{
   margin-right: auto;
   margin-bottom: 15px;
 }
-/* 
+
 #about-facts{
   display:flex;
   flex-direction: row;
   width: 75%;
-  height:100vh;
   margin-left: auto;
   margin-right: auto;
   flex-wrap: wrap;
-
-  margin-bottom: 200px;
 }
 
 .about-column{
   display: flex;
   flex-direction: column;
-  width: 30%;
-  text-align: center;
+  width: 50%;
+  text-align: left;
   margin-top: 20px;
   margin-bottom: auto;
   height: 80px;
   justify-content: space-between;
 }
 
-.about-column h3{
- 
- 
-}
 
-.about-column img{
-  width:50%;
-  height: auto;
-  margin-left: auto;
-  margin-right:auto;
-} */
 
 
 
@@ -248,7 +235,7 @@ canvas{
 .portfolio-column{
   display: flex;
   flex-direction: column;
-  width: 40%;
+  width: 80%;
 }
 
 
@@ -270,13 +257,18 @@ canvas{
   margin-bottom: auto;
 }
 
+.info-block ul{
+  margin-left: 15px;
+  padding-top: 5px;
+  padding-bottom: 10px;
+}
 
 .info-text{
   width:70%;
   margin-top: 8px;
   display:flex;
   flex-direction: column;
-  text-justify: auto;
+  text-align: justify;
   border-bottom: 1px solid var(--awesome-green);
 }
 
