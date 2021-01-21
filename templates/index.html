@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
@@ -7,320 +8,119 @@
   <meta name="description" content="portfolio">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Fascinate&family=Fascinate+Inline&family=Limelight&family=Notable&family=Text+Me+One&display=swap" rel="stylesheet">  <link rel="stylesheet" href="{{ url_for('static', filename='css/blobz.css') }}" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Inline+Display:wght@400;900&family=Text+Me+One&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
-  <script id="2d-fragment-shader" type="x-shader/x-fragment">// <![CDATA[
-    #ifdef GL_ES
-    precision highp float;
-    #endif
-  
-    #define PI 3.14159265359;
-  
-    uniform vec2 u_resolution;
-    uniform vec2 u_mouse;
-    uniform float u_time;
-    uniform float u_xpos;
-    uniform float u_ypos;
-  
-  vec3 mod289(vec3 x) {
-    return x - floor(x * (1.0 / 289.0)) * 289.0;
-  }
-  
-  vec4 mod289(vec4 x) {
-    return x - floor(x * (1.0 / 289.0)) * 289.0;
-  }
-  
-  vec4 permute(vec4 x) {
-       return mod289(((x*34.0)+1.0)*x);
-  }
-  
-  vec4 taylorInvSqrt(vec4 r)
-  {
-    return 1.79284291400159 - 0.85373472095314 * r;
-  }
-  
-  float snoise(vec3 v)
-    { 
-    const vec2  C = vec2(1.0/6.0, 1.0/3.0) ;
-    const vec4  D = vec4(0.0, 0.5, 1.0, 2.0);
-  
-    vec3 i  = floor(v + dot(v, C.yyy) );
-    vec3 x0 =   v - i + dot(i, C.xxx) ;
-  
-    vec3 g = step(x0.yzx, x0.xyz);
-    vec3 l = 1.0 - g;
-    vec3 i1 = min( g.xyz, l.zxy );
-    vec3 i2 = max( g.xyz, l.zxy );
-  
-    vec3 x1 = x0 - i1 + C.xxx;
-    vec3 x2 = x0 - i2 + C.yyy;
-    vec3 x3 = x0 - D.yyy;
-  
-    i = mod289(i); 
-    vec4 p = permute( permute( permute( 
-               i.z + vec4(0.0, i1.z, i2.z, 1.0 ))
-             + i.y + vec4(0.0, i1.y, i2.y, 1.0 )) 
-             + i.x + vec4(0.0, i1.x, i2.x, 1.0 ));
-  
-    float n_ = 0.142857142857;
-    vec3  ns = n_ * D.wyz - D.xzx;
-  
-    vec4 j = p - 49.0 * floor(p * ns.z * ns.z);
-  
-    vec4 x_ = floor(j * ns.z);
-    vec4 y_ = floor(j - 7.0 * x_ );
-  
-    vec4 x = x_ *ns.x + ns.yyyy;
-    vec4 y = y_ *ns.x + ns.yyyy;
-    vec4 h = 1.0 - abs(x) - abs(y);
-  
-    vec4 b0 = vec4( x.xy, y.xy );
-    vec4 b1 = vec4( x.zw, y.zw );
-  
-    vec4 s0 = floor(b0)*2.0 + 1.0;
-    vec4 s1 = floor(b1)*2.0 + 1.0;
-    vec4 sh = -step(h, vec4(0.0));
-  
-    vec4 a0 = b0.xzyw + s0.xzyw*sh.xxyy ;
-    vec4 a1 = b1.xzyw + s1.xzyw*sh.zzww ;
-  
-    vec3 p0 = vec3(a0.xy,h.x);
-    vec3 p1 = vec3(a0.zw,h.y);
-    vec3 p2 = vec3(a1.xy,h.z);
-    vec3 p3 = vec3(a1.zw,h.w);
-  
-    vec4 norm = taylorInvSqrt(vec4(dot(p0,p0), dot(p1,p1), dot(p2, p2), dot(p3,p3)));
-    p0 *= norm.x;
-    p1 *= norm.y;
-    p2 *= norm.z;
-    p3 *= norm.w;
-  
-    vec4 m = max(0.6 - vec4(dot(x0,x0), dot(x1,x1), dot(x2,x2), dot(x3,x3)), 0.0);
-    m = m * m;
-    return 42.0 * dot( m*m, vec4( dot(p0,x0), dot(p1,x1), 
-                                  dot(p2,x2), dot(p3,x3) ) );
-    }
-  
-    void main() {
-      vec3 color1 = vec3(0.0/255.0,62.0/255.0,42.0/255.0);
-      vec3 color2 = vec3(0.0/255.0,82.0/255.0,56.0/255.0);
-      vec3 color3 = vec3(0.0/255.0,72.0/255.0,49.0/255.0);
-      vec3 color4 = vec3(0.0/255.0,93.0/255.0,63.0/255.0);
-      vec3 color5 = vec3(0.0/255.0,103.0/255.0,70.0/255.0);
-      vec3 color6 = vec3(0.0/255.0,72.0/255.0,49.0/255.0);
-      vec2 lt = vec2(gl_FragCoord.x + u_xpos, gl_FragCoord.y + u_ypos);
-      vec2 st = lt.xy/u_resolution.xy;
-      st.x *= u_resolution.x/u_resolution.y;
-      vec3 color = vec3(0.0);
-      vec2 pos = vec2(st*0.6);
-      float DF = 0.0;
-      float a = 0.0;
-      vec2 vel = vec2(u_time*.1);
-      st.xy *= 0.4;
-      float r = snoise(vec3(st.x,st.y,u_time * 0.1));
-      
-    if(r > 0.60){
-      color = color5;
-    } else if(r > 0.20){
-      color = color4;
-    } else if(r > -0.20){
-      color = color3;
-    } else if(r > -0.60){
-      color = color2;
-    } else if(r > -2.0){
-      color = color1;
-    }
-      
-      gl_FragColor = vec4(color,1.0);
-    }
-  // ]]></script>
-  <script id="2d-vertex-shader" type="x-shader/x-vertex">// <![CDATA[
-    attribute vec2 a_position;
-    void main() {
-      gl_Position = vec4(a_position, 0, 1);
-    }
-    // ]]></script>
 </head>
-  <body>
-    <div id="nav">
-     
-      <div id="nav-content">
-        <a href="#">insert</a>
-        <a href="#">some</a>
-        <a href="#">links</a>
-        <a href="#">here!!</a>
+
+<body>
+  <div id="start-container">
+    <div id="particles-js"></div>
+    <div id="start-bottom">
+      <div id="start-text">
+        <h1>KIERA CASTNER</h1>
       </div>
+      <div></div>
     </div>
-    <div id="splash">
-      <canvas id="glscreen"></canvas>
+  </div>
+  <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script src="http://threejs.org/examples/js/libs/stats.min.js"></script>
+  <script src="{{url_for('static', filename='js/scripts.js')}}"></script>
+  <div class="main-container">
+    <h3>About</h3>
+    <div id="about">
+      <h5>Hi! I am a software engineer based in Seattle. I'm interested in blankety blank blank. Check out those fancy particles. Something something something test test. 
+        </br> Feel free to drop me a line! :)</h5>
+    </div>
+    <h3 id="portfolio-heading">Portfolio</h3>
+    <div id="portfolio-container">
+      <div class="portfolio-column">
+        <h4>Projects</h4>
 
-      <div id="splash-content"></div>
-    </div>
-    <div id="main-content">
-      <div id="title"><h1>Kiera Castner</h1></div>
-      <div id="overlay">
-      <div id="content-wrapper">
-      <div id="about">
-        <h3>Hi there! :)</h3>
-        <img id ="me" src="../static/images/me_cropped.png"/>
-        <p>blah blah blah.</p>
-        </br>
       </div>
-
-        <h3>Portfolio!</h3>
-      <div class="portfolio-container">
-        
-        <div class="portfolio-column">
-          <div class="info-block">
-            <img src="../static/images/magic.png" />
-            <div class="info-text">
-              <h4>Magic: Legends</h4>
-              <p>Releasing Soon!! </br>
-                Associate Producer </br></p>
-                <ul><li>Managed Engineering, UI/UX, and Environment art teams.</li>
-                  <li>Planned and coordinated major AI engine overhaul for engineering departments.</li>
-                  <li>Created builds, tracked dependencies (manually!! T_T), and managed source repositories.</li>
-                  <li>Supported dev team during pre-production and active production phases.</li>
-                </ul>
-            </div>
-          </div>
-          <div class="info-block">
-            <img src="../static/images/sto.jpg" />
-            <div class="info-text">
-              <h4>Star Trek Online</h4>
-              <p>Associate Producer
-                <ul>
-                  <li>Supported Star Trek Online for nearly 3 years. Saw two expansions, multiple season releases, and hundreds of updates out the door.</li>
-                  <li>Functioned as a release manager - created builds, planned features, and oversaw multiple development teams.</li>
-                </ul>
-            </div>
-          </div>
-
-          <div class="info-block">
-            <img src="../static/images/neverwinter.jpg" />
-            <div class="info-text">
-              <h4>Neverwinter</h4>
-              <ul>
-                <li>Supported Neverwinter QA team while I was Cryptic's Senior QA Lead. Continued to provide QA support as a producer.</li>
-                <li>Trained Neverwinter QA lead and multiple testers.</li>
-                <li>Performed weekly server maintenance.</li>
-                <li>Reviewed test plans and test strategies.</li>
-                <li>Helped with "the really weird engine bugs" due to my in-depth knowledge of the Cryptic Engine ;D</li>
-              </ul>
-            </div>
-          </div>
-          <div class="info-block">
-            <img src="../static/images/tftb.png" />
-            <div class="info-text">
-              <h4>Tales From The Borderlands</h4>
-              <p>Android QA Lead </p>
-              <ul>
-                <li>Successfully shipped episodes to Google Play despite extremely tight deadlines and limited resources.</li>
-                <li>Wrote automated testing scripts for Android development.</li>
-                <li>Responsible for device compatibility testing across 15+ iOS/Android hardware surfaces.</li>
-                <li>Won 3 team awards/bonuses for leadership and dedication to this project.</li>
-              </ul>
-            </div>
-          </div>
-          <div class="info-block">
-            <img src="../static/images/wolf.png" />
-            <div class="info-text">
-              <h4>The Wolf Among Us</h4>
-              <p>Won DICE Adventure Game of the Year!</p>
-              <p>Android QA Lead</p>
-              <ul>
-                <li>Led testing for Android versions of all episodes and supported testing for all episodes going to Xbox Arcade.</li>
-                <li>Worked on Wolf Episode 5 while it was actively being developed for all platforms</li>
-                </ul>
-            </div>
-          </div>
-          <div class="info-block">
-            <img src="../static/images/game-of-thrones.jpg" />
-            <div class="info-text">
-              <h4>Game of Thrones: A Telltale Series</h4>
-              <p>Android/ iOS QA Lead.</p>
-              <ul>
-                <li>Often functioned as QA Lead across all platforms.</li>
-                <li>Wrote automated testing scripts for Android development.</li>
-                <li>Responsible for device compatibility testing across 15+ iOS/Android hardware surfaces.</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="info-block">
-            <img src="../static/images/twd-telltale-UK-release.jpg" />
-            <div class="info-text">
-              <h4>The Walking Dead: Season 1</h4>
-              <p>Won over 90 Game of the Year awards!!</p>
-                <p>Analyst</p>
-              <ul><li>
-                Worked on mobile version of Walking Dead: Season 1
-              </li></ul>
-            </div>
-          </div>
-          <div class="info-block">
-            <img src="../static/images/WalkingDeadSeason2Title.jpg" />
-            <div class="info-text">
-              <h4>The Walking Dead: Season 2</h4>
-              <p>Analyst</p>
-              <ul><li>
-                Worked on mobile version of Walking Dead: Season 2
-              </li>
-            <li>Lots and lots of hardware device testing ;)</li></ul>
-            </div>
-          </div>
-          <div class="info-block">
-            <img src="../static/images/warcommander.png" />
-            <div class="info-text">
-              <h4>War Commander</h4>
-              <p>Analyst</p>
-              <ul>
-                <li>
-                  Was assigned to War Commander: Rogue Assault dev team but often helped out with QA testing for War Commander.
-                </li>
-              </ul>
-               
-            </div>
-          </div>
-          <div class="info-block">
-            <img src="../static/images/wcra-logo.png" />
-            <div class="info-text">
-              <h4>War Commader: Rogue Assault</h4> 
-              <p>Analyst</p>
-              <ul>
-                <li>Worked on Rogue Assault while it was in preproduction.</li>
-                <li>Set up initial company testing framework for Android and performed hardware testing across multiple devices.</li>
-              </ul>
-            </div>
-          </div>
-          <div class="info-block">
-            <img src="../static/images/champs.png" />
-            <div class="info-text">
-              <h4>Champions Online</h4>
-              <ul><li>
-                Performed weekly server maintenance & various support tasks.
-              </li></ul>
-            </div>
+      <div class="portfolio-column">
+        <h4>Games</h4>
+        <div class="info-block">
+          <img src="../static/images/champs.png" />
+          <div class="info-text">
+            <p class="bold">Champions Online</p>
+            <p>test test test test test test test.</p>
           </div>
         </div>
-      </br>
-    </br>
-        <h3>Coding Projects!</h3>
-        <div class="portfolio-container">
-
+        <div class="info-block">
+          <img src="../static/images/game-of-thrones.jpg" />
+          <div class="info-text">
+            <p class="bold">Game of Thrones: A Telltale Series</p>
+            <p>test test test test test test test.</p>
+          </div>
+        </div>
+        <div class="info-block">
+          <img src="../static/images/magic.png" />
+          <div class="info-text">
+            <p class="bold">Magic: Legends</p>
+            <p>test test test test test test test.</p>
+          </div>
+        </div>
+        <div class="info-block">
+          <img src="../static/images/neverwinter.jpg" />
+          <div class="info-text">
+            <p class="bold">Neverwinter</p>
+            <p>test test test test test test test.</p>
+          </div>
+        </div>
+        <div class="info-block">
+          <img src="../static/images/sto.jpg" />
+          <div class="info-text">
+            <p class="bold">Star Trek Online</p>
+            <p>test test test test test test test.</p>
+          </div>
+        </div>
+        <div class="info-block">
+          <img src="../static/images/tftb.png" />
+          <div class="info-text">
+            <p class="bold">Tales From The Borderlands</p>
+            <p>test test test test test test test.</p>
+          </div>
+        </div>
+        <div class="info-block">
+          <img src="../static/images/twd-telltale-UK-release.jpg" />
+          <div class="info-text">
+            <p class="bold">The Walking Dead: Season 1</p>
+            <p>test test test test test test test.</p>
+          </div>
+        </div>
+        <div class="info-block">
+          <img src="../static/images/WalkingDeadSeason2Title.jpg" />
+          <div class="info-text">
+            <p class="bold">The Walking Dead: Season 2</p>
+            <p>test test test test test test test.</p>
+          </div>
+        </div>
+        <div class="info-block">
+          <img src="../static/images/warcommander.png" />
+          <div class="info-text">
+            <p class="bold">War Commander</p>
+            <p>test test test test test test test.</p>
+          </div>
+        </div>
+        <div class="info-block">
+          <img src="../static/images/wcra-logo.png" />
+          <div class="info-text">
+            <p class="bold">War Commader: Rogue Assault</p>
+            <p>test test test test test test test.</p>
+          </div>
+        </div>
+        <div class="info-block">
+          <img src="../static/images/wolf.svg" />
+          <div class="info-text">
+            <p class="bold">The Wolf Among Us</p>
+            <p>test test test test test test test.</p>
+          </div>
         </div>
       </div>
     </div>
-    </div>
-    </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="css/animate.css">
-    <script src="../static/js/scripts.js"></script>
-    <script src="js/wow.min.js"></script>
-    <script>
-    new WOW().init();
-    </script>
-  </body>
+  </div>
+</body>
+
 </html>
